@@ -1,0 +1,19 @@
+
+ .amcharts-map-line {
+                stroke-dasharray: 2px 2px;
+                stroke-linejoin: round;
+                stroke-linecap: round;
+                -webkit-animation: am-moving-dashes 3s linear infinite;
+                animation: am-moving-dashes 3s linear infinite;
+            }
+
+            @-webkit-keyframes am-moving-dashes {
+                100% {
+                    stroke-dashoffset: -30px;
+                }
+            }
+            @keyframes am-moving-dashes {
+                100% {
+                    stroke-dashoffset: -30px;
+                }
+            }
