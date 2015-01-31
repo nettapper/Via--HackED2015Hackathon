@@ -21,9 +21,9 @@
 // d3.select("body").selectAll("div").data(dataset).enter().append("div").attr("class", "bar").style("height", function(d){return d*5 + "px"});
 
 // SVG shapes
-var dataset = [5, 10, 15, 20, 25];
-var w = 500;
-var h = 50;
+var dataset = [5, 10, 15, 20, 25, 30];
+var w = 600;
+var h = 80;
 var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
 var circles = svg.selectAll("svg").data(dataset).enter().append("circle");
 circles.attr("cx", function(d, i) {
