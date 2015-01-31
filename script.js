@@ -21,15 +21,24 @@
 // d3.select("body").selectAll("div").data(dataset).enter().append("div").attr("class", "bar").style("height", function(d){return d*5 + "px"});
 
 // SVG shapes
-var dataset = [5, 10, 15, 20, 25];
+// var dataset = [5, 10, 15, 20, 25];
+// var w = 500;
+// var h = 50;
+// var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+// var circles = svg.selectAll("svg").data(dataset).enter().append("circle");
+// circles.attr("cx", function(d, i) {
+            // return (i * 50) + 25;
+        // })
+       // .attr("cy", h/2)
+       // .attr("r", function(d) {
+            // return d;
+       // });
+
+// SVG Bar Graph
+var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+//var dataset = [1,2,3,4,5];
 var w = 500;
-var h = 50;
+var h = 100;
+var padding = 1;
 var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
-var circles = svg.selectAll("svg").data(dataset).enter().append("circle");
-circles.attr("cx", function(d, i) {
-            return (i * 50) + 25;
-        })
-       .attr("cy", h/2)
-       .attr("r", function(d) {
-            return d;
-       });
+svg.selectAll("rect").data(dataset).enter().append("rect").attr("x", function(d, i){return i * (w / dataset.length);}).attr("y", 0).attr("height", function(d){return 4*d;}).attr("width", w / dataset.length - padding);
