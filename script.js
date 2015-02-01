@@ -1,7 +1,6 @@
 var fontSize = 15;
-
-var width = 1400,
-    height = 750;
+var width = 1400;
+var height = 750;
 
 var tree = d3.layout.tree()
     .size([height, width - 160]);
@@ -12,35 +11,35 @@ var diagonal = d3.svg.diagonal()
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(40,0)");
 
 d3.json("progress.json", function(error, json) {
-  var nodes = tree.nodes(json),
-      links = tree.links(nodes);
+    var nodes = tree.nodes(json),
+    links = tree.links(nodes);
 
-  var link = svg.selectAll("path.link")
-      .data(links)
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("d", diagonal);
+    var link = svg.selectAll("path.link")
+	.data(links)
+	.enter().append("path")
+	.attr("class", "link")
+	.attr("d", diagonal);
 
-  var node = svg.selectAll("g.node")
-      .data(nodes)
-    .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+    var node = svg.selectAll("g.node")
+	.data(nodes)
+	.enter().append("g")
+	.attr("class", "node")
+	.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 
-  //node.append("circle")
-      //.attr("r", function(d) { return fontSize / 2.5 * d.name.length; });
+    //node.append("circle")
+    //.attr("r", function(d) { return fontSize / 2.5 * d.name.length; });
     node.append("rect").attr("x", 0).attr("y", -1*fontSize).attr("width", 50).attr("height", 2*fontSize).attr("rx", 10).attr("ry", 10);
 
-  node.append("text")
-      .attr("font-size", fontSize + "px")
-      .attr("dx", function(d) { return -2 * d.name.length; })
-      .attr("dy", 3)  // centered vertically
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.name; });
+    node.append("text")
+	.attr("font-size", fontSize + "px")
+	.attr("dx", function(d) { return -2 * d.name.length; })
+	.attr("dy", 3)  // centered vertically
+	.attr("text-anchor", "middle")
+	.text(function(d) { return d.name; });
 });
 
 d3.select(self.frameElement).style("height", height + "px");
