@@ -7,7 +7,7 @@ body {
 /* For The Tree */
 .node rect {
   fill: #fff;
-  stroke-width: 1.5px;
+  stroke-width: 3px;
 }
 .node {
   font-family: sans-serif;
@@ -15,5 +15,5 @@ body {
 .link {
   fill: none;
   stroke: white;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
