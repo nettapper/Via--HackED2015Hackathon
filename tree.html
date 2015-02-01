@@ -55,6 +55,9 @@ d3.json("progress.json", function(error, json) {
     .enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+      .on('click', function(d, i) {
+        console.log(d,i);
+  })  
 
   //node.append("circle")
       //.attr("r", function(d) { return fontSize / 2.5 * d.name.length; });
