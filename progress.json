@@ -1,14 +1,23 @@
 {
-  "name": "you",
-  "children": [
-    {
-      "name": "soccer"
+  "name":"you",
+  "children":[
+    {"name":"career"},
+    {"name":"fashion"},
+    {"name":"finance"},
+    {"name":"social"},
+    {"name":"academics",
+      "children":[
+        {"name":"study"},
+        {"name":"homework"}
+      ]
     },
-    {
-      "name": "golf"
-    },
-    {
-      "name": "judo"
+    {"name":"nutrition",
+      "children":[
+        {"name":"eat green"},
+        {"name":"exercise",
+          "children":[{"name":"reps"},{"name":"type"}]
+        }
+      ]
     }
-    ]
+  ]
 }
