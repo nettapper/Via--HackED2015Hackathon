@@ -30,14 +30,17 @@ d3.json("progress.json", function(error, json) {
 	.attr("class", "node")
 	.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 	.on('click', function(d, i) {
-            console.log(d, i);
-	    if (d.selected) { 
-		d.selected = false;
+            console.log(d.selected);
+	    if (d.selected==2) { 
+		d.selected = 0;
 		d3.select(this).select("rect").attr("stroke", "green");
-	    } else {
-		d.selected = true;
+	    } else if (d.selected == 1) {
+		d.selected = 2;
 		d3.select(this).select("rect").attr("stroke", "red");
-	    }  })  
+	    } else {
+	    	d.selected = 1
+	    	d3.select(this).select("rect").attr("stroke","yellow");
+	    } })  
 
     node.append("rect")
 	.attr("x", function(d) { return fontSize * -0.5 * d.name.length;})
