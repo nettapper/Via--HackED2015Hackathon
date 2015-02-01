@@ -11,6 +11,7 @@
     {"name":"finance",
       "children":[
         {"name":"make bank"},
+        {"name":"win the lottery"},
         {"name":"pay the rent"}
       ]
     },

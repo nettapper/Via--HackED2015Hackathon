@@ -43,9 +43,9 @@ d3.json("progress.json", function(error, json) {
 	    } })  
 
     node.append("rect")
-	.attr("x", function(d) { return fontSize * -0.5 * d.name.length;})
+	.attr("x", function(d) { return fontSize * -0.45 * d.name.length;})
 	.attr("y", -1*fontSize)  // roughly center around text
-	.attr("width", function(d) { return fontSize * d.name.length;})
+	.attr("width", function(d) { return fontSize * 0.65 * d.name.length;})
 	.attr("height", 2*fontSize)
 	.attr("rx", 10)
 	.attr("ry", 10)
