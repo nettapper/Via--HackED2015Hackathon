@@ -1,12 +1,20 @@
+/* For the Background */
 body {
     background-color: lightgray;
     color: black;
 }
-/* For bar graph example */
-div.bar {
-    display: inline-block;
-    width: 20px;
-    height: 75px;   /* We'll override this later */
-    background-color: teal;
-    margin-right: 2px;  /* to seperate the bar graphs */
+
+/* For The Tree */
+.node rect {
+  fill: #fff;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+.node {
+  font-family: sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
 }
