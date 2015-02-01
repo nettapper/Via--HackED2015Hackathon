@@ -36,10 +36,10 @@ d3.json("progress.json", function(error, json) {
 		d3.select(this).select("rect").attr("stroke", "green");
 	    } else if (d.selected == 1) {
 		d.selected = 2;
-		d3.select(this).select("rect").attr("stroke", "red");
+		d3.select(this).select("rect").attr("stroke", "yellow");
 	    } else {
 	    	d.selected = 1
-	    	d3.select(this).select("rect").attr("stroke","yellow");
+	    	d3.select(this).select("rect").attr("stroke","red");
 	    } })  
 
     node.append("rect")
