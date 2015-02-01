@@ -57,6 +57,7 @@ d3.json("progress.json", function(error, json) {
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
       .on('click', function(d, i) {
         console.log(d,i);
+        d3.select(this).style("fill","red");
   })  
 
   //node.append("circle")
