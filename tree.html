@@ -59,11 +59,10 @@ d3.json("progress.json", function(error, json) {
         console.log(d,i);
     if (d.selected) { 
         d.selected = false;
-        d3.select(this).attr("fill", "green");
+        d3.select(this).select("rect").attr("stroke", "green");
     } else {
         d.selected = true;
-        
-        d3.select(this).attr("fill", "black");
+        d3.select(this).select("rect").attr("stroke", "red");
     }  })  
 
   //node.append("circle")
