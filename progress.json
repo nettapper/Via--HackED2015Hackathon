@@ -1,21 +1,34 @@
 {
   "name":"you",
   "children":[
-    {"name":"career"},
+    {"name":"career",
+      "children":[
+        {"name":"ace this project"},
+        {"name":"learn everything"}
+      ]
+    },
     {"name":"fashion"},
-    {"name":"finance"},
+    {"name":"finance",
+      "children":[
+        {"name":"make bank"},
+        {"name":"pay the rent"}
+      ]
+    },
     {"name":"social"},
     {"name":"academics",
       "children":[
-        {"name":"study"},
-        {"name":"homework"}
+        {"name":"study math"},
+        {"name":"do math homework"}
       ]
     },
     {"name":"nutrition",
       "children":[
-        {"name":"eat green"},
+        {"name":"eat a salad"},
         {"name":"exercise",
-          "children":[{"name":"reps"},{"name":"type"}]
+         "children":[
+	     {"name":"rock climb"},
+	     {"name":"run"}
+	  ]
         }
       ]
     }
