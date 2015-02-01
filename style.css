@@ -7,7 +7,6 @@ body {
 /* For The Tree */
 .node rect {
   fill: #fff;
-  stroke: black;
   stroke-width: 1.5px;
 }
 .node {

@@ -30,7 +30,7 @@ d3.json("progress.json", function(error, json) {
 	.attr("class", "node")
 	.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 	.on('click', function(d, i) {
-            console.log(d,i);
+            console.log(d, i);
 	    if (d.selected) { 
 		d.selected = false;
 		d3.select(this).select("rect").attr("stroke", "green");
@@ -45,7 +45,8 @@ d3.json("progress.json", function(error, json) {
 	.attr("width", function(d) { return fontSize * d.name.length;})
 	.attr("height", 2*fontSize)
 	.attr("rx", 10)
-	.attr("ry", 10);
+	.attr("ry", 10)
+        .attr("stroke", "black");
 
     node.append("text")
 	.attr("font-size", fontSize + "px")
