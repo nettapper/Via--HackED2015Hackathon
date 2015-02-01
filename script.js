@@ -43,7 +43,17 @@ d3.json("progress.json", function(error, json) {
 	.attr("dx", function(d) { return -2 * d.name.length; })
 	.attr("dy", 3)  // centered vertically
 	.attr("text-anchor", "middle")
-	.text(function(d) { return d.name; });
+	.text(function(d) { return d.name; })
+	.on('click', function(d, i) {
+	    if (d.selected) { 
+		d.selected = false;
+		d3.select(this).attr("fill", "green");
+	    } else {
+		d.selected = true;
+		
+		d3.select(this).attr("fill", "black");
+	    }  });
+
 });
 
 d3.select(self.frameElement).style("height", height + "px");
