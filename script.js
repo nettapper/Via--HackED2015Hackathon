@@ -12,7 +12,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height)
     .append("g")
-    .attr("transform", "translate(40,0)");
+    .attr("transform", "translate(40,0)");  // translate everting to the right in order to not cut off text
 
 d3.json("progress.json", function(error, json) {
     var nodes = tree.nodes(json),
@@ -30,9 +30,13 @@ d3.json("progress.json", function(error, json) {
 	.attr("class", "node")
 	.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 
-    //node.append("circle")
-    //.attr("r", function(d) { return fontSize / 2.5 * d.name.length; });
-    node.append("rect").attr("x", 0).attr("y", -1*fontSize).attr("width", 50).attr("height", 2*fontSize).attr("rx", 10).attr("ry", 10);
+    node.append("rect")
+	.attr("x", function(d) { return fontSize * -0.5 * d.name.length;})
+	.attr("y", -1*fontSize)  // roughly center around text
+	.attr("width", function(d) { return fontSize * d.name.length;})
+	.attr("height", 2*fontSize)
+	.attr("rx", 10)
+	.attr("ry", 10);
 
     node.append("text")
 	.attr("font-size", fontSize + "px")
