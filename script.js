@@ -29,6 +29,15 @@ d3.json("progress.json", function(error, json) {
 	.enter().append("g")
 	.attr("class", "node")
 	.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+	.on('click', function(d, i) {
+            console.log(d,i);
+	    if (d.selected) { 
+		d.selected = false;
+		d3.select(this).select("rect").attr("stroke", "green");
+	    } else {
+		d.selected = true;
+		d3.select(this).select("rect").attr("stroke", "red");
+	    }  })  
 
     node.append("rect")
 	.attr("x", function(d) { return fontSize * -0.5 * d.name.length;})
@@ -43,16 +52,7 @@ d3.json("progress.json", function(error, json) {
 	.attr("dx", function(d) { return -2 * d.name.length; })
 	.attr("dy", 3)  // centered vertically
 	.attr("text-anchor", "middle")
-	.text(function(d) { return d.name; })
-	.on('click', function(d, i) {
-	    if (d.selected) { 
-		d.selected = false;
-		d3.select(this).attr("fill", "green");
-	    } else {
-		d.selected = true;
-		
-		d3.select(this).attr("fill", "black");
-	    }  });
+	.text(function(d) { return d.name; });
 
 });
 
