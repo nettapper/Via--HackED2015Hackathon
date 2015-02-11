@@ -1,5 +1,6 @@
 # HackED-2015-Hackathon
 Version=3.5.3 Site=http://d3js.org/
+Version=2.1.3 Site=http://jquery.com/
 
 
 My versioning scheme:
